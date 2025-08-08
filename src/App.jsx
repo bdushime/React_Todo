@@ -6,8 +6,9 @@ const App = () => {
 
   const [items, setItems] = useState([]);
   
-  function addTodo(){
-     const newItem = { text:'New Todo'};
+  function addTodo(text){
+    console.log(text)
+     const newItem = { id:Date.now() , text: text};
      setItems(prev => [...prev, newItem]);
   }
 
@@ -21,8 +22,8 @@ const App = () => {
         <Search onAdd={addTodo}/>
 
         <div className="space-y-2 w-full max-w-md">
-        {items.map(item =>(
-          <ListItem key={item.id} text={item.text} />
+        {items.map((item,index )=>(
+          <ListItem key={index} text={item.text} />
         )) }
         </div>
         

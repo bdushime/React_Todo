@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const Search = ({onAdd}) => {
+export const Search = ({ onAdd }) => {
+  const [input, setInput] = useState("");
+
+  const handleClick = () => {
+    if (input.trim()) {
+      onAdd(input);
+      setInput("");
+    }
+  };
+
   return (
     <div class="flex items-center bg-white rounded-full shadow-md px-4 py-2 w-full max-w-md">
       <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
         type="text"
         placeholder="Add todo..."
         class="flex-grow bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
       />
-      <button onClick={onAdd} class="flex items-center justify-center w-8 h-8 bg-teal-500 text-white rounded-full hover:bg-teal-600">
+      <button
+        onClick={handleClick}
+        class="flex items-center justify-center w-8 h-8 bg-teal-500 text-white rounded-full hover:bg-teal-600"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="w-4 h-4"
