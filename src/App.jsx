@@ -3,6 +3,11 @@ import { Search } from './Search'
 import { ListItem } from './ListItem'
 
 const App = () => {
+  
+  function addTodo(){
+     console.log('Button click')
+  }
+
   return (
     <>
       <div className='h-screen  flex flex-col items-center justify-center space-y-6'>
@@ -10,7 +15,7 @@ const App = () => {
              todos
         </div>
 
-        <Search />
+        <Search onAdd={addTodo}/>
        
       </div>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Search = () => {
+export const Search = ({onAdd}) => {
   return (
     <div class="flex items-center bg-white rounded-full shadow-md px-4 py-2 w-full max-w-md">
       <input
@@ -8,7 +8,7 @@ export const Search = () => {
         placeholder="Add todo..."
         class="flex-grow bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
       />
-      <button class="flex items-center justify-center w-8 h-8 bg-teal-500 text-white rounded-full hover:bg-teal-600">
+      <button onClick={onAdd} class="flex items-center justify-center w-8 h-8 bg-teal-500 text-white rounded-full hover:bg-teal-600">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="w-4 h-4"
