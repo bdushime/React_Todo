@@ -1,5 +1,8 @@
+import { useState } from "react";
 
-export const ListItem = ({text}) => {
+export const ListItem = ({text,id,onDelete}) => {
+
+
   return (
     <>
       <div className="flex items-center justify-between py-2 border-b">
@@ -10,7 +13,7 @@ export const ListItem = ({text}) => {
           />
           <span className="text-gray-700">{text}</span>
         </div>
-        <button className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200">
+        <button onClick={()=>{onDelete(id)}} className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-5 h-5 text-red-500"

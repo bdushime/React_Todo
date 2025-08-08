@@ -12,6 +12,11 @@ const App = () => {
      setItems(prev => [...prev, newItem]);
   }
 
+  function onHandleDelete(id) {
+    console.log('Deleting item with id:', id);
+    setItems(prev => prev.filter(item => item.id !== id));
+  }
+
   return (
     <>
       <div className='h-screen  flex flex-col items-center justify-center space-y-6'>
@@ -23,7 +28,7 @@ const App = () => {
 
         <div className="space-y-2 w-full max-w-md">
         {items.map((item,index )=>(
-          <ListItem key={index} text={item.text} />
+          <ListItem key={index} text={item.text} id={item.id} onDelete={onHandleDelete} />
         )) }
         </div>
         
