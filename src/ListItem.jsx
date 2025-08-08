@@ -1,5 +1,5 @@
 
-export const ListItem = () => {
+export const ListItem = ({text}) => {
   return (
     <>
       <div class="flex items-center justify-between py-2 border-b">
@@ -8,7 +8,7 @@ export const ListItem = () => {
             type="checkbox"
             class="w-4 h-4 text-teal-500 border-gray-300 rounded focus:ring-teal-500"
           />
-          <span class="text-gray-700">IAmHere</span>
+          <span class="text-gray-700">{text}</span>
         </div>
         <button class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200">
           <svg
